@@ -1,5 +1,5 @@
 # GIT-Analysis-Project-Mercor
-Before running the code reun the following command in console
+Before running the code run the following command in console
           
       pip install openai
           
