@@ -6,10 +6,8 @@ import openai
 
 app = Flask(__name__)
 
-# Set up OpenAI API credentials
 openai.api_key = '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'
 
-# Function to fetch repositories from GitHub user URL
 def fetch_user_repositories(github_url):
     username = re.search(r'https://github.com/([^/]+)', github_url).group(1)
     api_url = f'https://api.github.com/users/{username}/repos'
@@ -23,10 +21,6 @@ def fetch_user_repositories(github_url):
 
 # Function to preprocess code in repositories
 def preprocess_code(code):
-    # Perform code preprocessing here
-    # Example: Memory management techniques for large repositories/files
-    # You can define your own preprocessing steps based on your requirements
-    # This is just a placeholder example
     processed_code = code.replace('large_memory_usage_function()', 'optimized_memory_usage_function()')
     return processed_code
 
@@ -47,7 +41,6 @@ def assess_complexity(code):
             return complexity_score
     except Exception as e:
         print(f"Error in GPT API call: {e}")
-    # If there was an error or no completion text, return a default complexity score
     return 0
 
 @app.route('/', methods=['GET', 'POST'])
@@ -57,15 +50,12 @@ def index():
         repositories = fetch_user_repositories(user_url)
 
         if repositories:
-            # Preprocess code in repositories and calculate complexity scores
             for repo in repositories:
                 if isinstance(repo, dict):
                     repo_name = repo['name']
                     clone_url = repo['clone_url']
                     clone_dir = f'./{repo_name}'
                     os.system(f'git clone {clone_url} {clone_dir}')
-
-                    # Initialize complexity score for the repository
                     repo['complexity_score'] = 0
 
                     # Process files in the repository
