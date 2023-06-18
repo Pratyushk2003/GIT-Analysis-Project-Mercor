@@ -20,10 +20,6 @@ def fetch_user_repositories(github_url):
 
 # Function to preprocess code in repositories
 def preprocess_code(code):
-    # Perform code preprocessing here
-    # Example: Memory management techniques for large repositories/files
-    # You can define your own preprocessing steps based on your requirements
-    # This is just a placeholder example
     processed_code = code.replace('large_memory_usage_function()', 'optimized_memory_usage_function()')
     return processed_code
 
