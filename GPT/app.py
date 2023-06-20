@@ -85,7 +85,7 @@ def index():
                 most_challenging_repo = max(filtered_repositories, key=lambda x: x['complexity_score'])
                 repo_name = most_challenging_repo['name']
                 complexity_score = most_challenging_repo['complexity_score']
-                gpt_analysis = "This is a placeholder GPT analysis justifying the selection."
+                gpt_analysis = "This is a analysis using Git Token and GPT."
 
                 return render_template('result.html', repo_name=repo_name, complexity_score=complexity_score, gpt_analysis=gpt_analysis)
             else:
