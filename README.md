@@ -14,7 +14,7 @@ Use Correct Open Api Key
 
 # Deployment Links
 
-http://usinggptwithoutcredentials.pythonanywhere.com/  -  GPT
+http://usinggptwithoutcredentials.pythonanywhere.com/  -  Using OPENAI Key and GPT
 
 http://pratyushk.pythonanywhere.com/  -  GPT With different credentials
 
