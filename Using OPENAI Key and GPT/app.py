@@ -6,7 +6,7 @@ import openai
 
 app = Flask(__name__)
 
-openai.api_key = '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'
+openai.api_key = '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'
 
 def fetch_user_repositories(github_url):
     username = re.search(r'https://github.com/([^/]+)', github_url).group(1)
