@@ -77,7 +77,7 @@ def index():
                     # Process files in the repository
                     for root, dirs, files in os.walk(clone_dir):
                         for file in files:
-                            if file.endswith('.ipynb') or file.endswith('.py'):
+                            if file.endswith('.ipynb') or file.endswith('.py') or file.endswith('.c') or file.endswith('.cpp') or file.endswith('.java'):
                                 file_path = os.path.join(root, file)
                                 with open(file_path, 'r', encoding='utf-8') as f:  # Specify the encoding as UTF-8
                                     code = f.read()
